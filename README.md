@@ -1,5 +1,7 @@
 # AI for Advocacy — First interaction prototype
 
+**Repository status:** Private, invitation-only development. Contributor onboarding documents are in [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). No final open-source license has been approved; see [LICENSE-STATUS.md](LICENSE-STATUS.md).
+
 Built from mjwatzmedia's AI for Advocacy brief at Malithi's request.
 
 ## Status
@@ -80,6 +82,10 @@ The original preservation commit is `da96749944d6cc302ecfe2ddcca93dca91ca07ce`.
 The manifests and evidence under `docs/audit/` describe that historical commit, not later
 modified files. See [recovery instructions](docs/operations/recovery.md) and
 [cleanup review notes](docs/development/privacy-test-cleanup.md).
+
+## For prospective collaborators
+
+This repository is currently private. Request access from the maintainer before proposing changes. Start with [CONTRIBUTING.md](CONTRIBUTING.md); use synthetic cases and open a reviewed pull request. No merge, deployment, paid integration, or sensitive-data processing is implied by repository access.
 
 ## Next design decisions
 
