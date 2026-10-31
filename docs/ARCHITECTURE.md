@@ -28,7 +28,7 @@ this backup authorizes the proposed implementation, provider changes or deployme
 
 ## Approval boundaries and maintenance
 
-MJ Watz is founder/primary maintainer. Official repository stays private until authorized.
+MJ Watz is founder/primary maintainer. Official repository is currently private and invitation-only; any future visibility change requires authorization.
 No final license, invitations, paid services, permissions changes, production migrations,
 provider/model selection, major replacement or deployment without explicit authorization.
 Development follows reviewed branches, tests, commits, push and PRs. Merge and release
