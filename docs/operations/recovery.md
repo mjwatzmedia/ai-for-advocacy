@@ -27,7 +27,10 @@ npm test
 Tests start an ephemeral loopback server using a temporary asset copy; no running server
 or fixed deployment path is needed. Reports go to ignored `test-results/` by default.
 Individual suites and platform prerequisites are documented in the root README.
-There is no newly configured GitHub Actions workflow; tests must be run explicitly.
+The pull-request workflow `.github/workflows/tests.yml` runs the same `npm test` on
+GitHub-hosted Ubuntu with Node24, Python3.12 and Chromium. It is test-only, uses read-only
+repository permissions and no deployment secrets. It does not configure required-check
+branch protection or publish the app.
 
 The preservation commit `da96749944d6cc302ecfe2ddcca93dca91ca07ce` intentionally
 retains the original failing npm placeholder and nonportable scripts. Historical audit files

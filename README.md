@@ -49,6 +49,12 @@ serving a temporary copy of the assets with the real Python handler. It does not
 or change a running prototype. It removes `PROMPTQL_*` variables from test subprocesses.
 No external account, API key, PromptQL installation, or running application server is required.
 
+**Pull request CI:** `.github/workflows/tests.yml` runs `npm ci`, installs Chromium and
+its Linux dependencies, then runs `npm test` on GitHub-hosted Ubuntu for opened, updated
+and reopened pull requests. It uses read-only repository permissions and no application
+or deployment secrets. Failed tests fail the check; no deployment occurs. Branch-protection
+requirements are not configured by this workflow.
+
 Individual suites: `npm run test:smoke`, `npm run test:views`, `npm run test:privacy`.
 To invoke the runner from another directory, use `node /path/to/repository/tests/run.cjs`.
 Set `PYTHON` if the Python executable is not named `python3`.
