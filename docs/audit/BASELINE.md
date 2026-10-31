@@ -1,5 +1,10 @@
 # Preservation baseline — October 31, 2026
 
+**Historical evidence:** this document, manifest and verifier describe preservation commit
+`da96749944d6cc302ecfe2ddcca93dca91ca07ce`, not subsequent development.
+Run its verifier only in a separate checkout of that commit; see
+[recovery instructions](../operations/recovery.md). For a development checkout use `npm test`.
+
 Approved scope: first sanitized backup of the existing prototype, selected product requirements
 and reproducible operating context. Repository mjwatzmedia/ai-for-advocacy was already private
 and empty: branches [], commits API 409 Git Repository is empty, contents empty.
