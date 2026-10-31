@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-31",
+  "scope": "Isolated temporary copy on same VM; fresh npm ci from lockfile; no PROMPTQL_* environment; test-only URL/output substitutions. Not independent-machine reproduction.",
+  "steps": {
+    "npm ci": {
+      "exit_code": 0
+    },
+    "Chromium install": {
+      "exit_code": 0
+    },
+    "JavaScript syntax": {
+      "exit_code": 0
+    },
+    "smoke.cjs": {
+      "exit_code": 0
+    },
+    "views.cjs": {
+      "exit_code": 0
+    },
+    "npm test (known placeholder)": {
+      "exit_code": 1
+    }
+  },
+  "readiness": 204,
+  "python_syntax": "PASS",
+  "functional": {
+    "functional": "PASS",
+    "browserErrors": 0,
+    "dataRequests": 0,
+    "exportBytes": 3527,
+    "accessibility": {
+      "desktop": [],
+      "mobile": []
+    }
+  },
+  "layout_and_accessibility": [
+    {
+      "width": 1440,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "actions",
+      "violations": []
+    }
+  ],
+  "preserved_sources_match": true,
+  "known_failures": [
+    "npm test is the original generated placeholder (exit 1); unchanged.",
+    "Hidden DOM reset residue documented; no fix in baseline."
+  ]
+}

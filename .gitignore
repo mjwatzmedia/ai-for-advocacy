@@ -1,0 +1,22 @@
+# Credentials and machine-specific settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Dependencies, caches, generated test evidence
+node_modules/
+__pycache__/
+*.pyc
+.playwright/
+playwright-report/
+test-results/
+tests/*.png
+tests/accessibility.json
+tests/view-tests.json
+*.zip
+*.log
+.DS_Store
+# Advocacy case files and user exports: never version personal data
+private-data/
+case-exports/

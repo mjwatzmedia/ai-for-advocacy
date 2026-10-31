@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-31",
+  "preserved_source_count": 11,
+  "live_files_unchanged": 17,
+  "pattern_findings": [],
+  "scope": "Allowlisted source and deliberately selected product/operations documentation. No credentials, private case exports or full chat history. Conservative pattern and exact environment-secret scan; not a guarantee against all sensitive content."
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "34301003dff286c0653de0a40ef56793c89ab221b05682f3e8f6c29ef6bc4177",
+    "bytes": 3162
+  },
+  {
+    "path": "server.py",
+    "sha256": "b751a192338c008a181f5eb63289ec7e2b4c60c12710aff86d76ebae94941c6e",
+    "bytes": 1303
+  },
+  {
+    "path": "package.json",
+    "sha256": "7eb81065b349d17302af7d8c1f850556d9a0dc31a0f9b5d2de4450d23e547bd5",
+    "bytes": 389
+  },
+  {
+    "path": "package-lock.json",
+    "sha256": "61b9cb1267f642b9f849a3590393cb8ae92c3ba08eece4ccb6982418263d6334",
+    "bytes": 2634
+  },
+  {
+    "path": "publish.py",
+    "sha256": "7a63df02d17a730703722bfe80047769f8dd017e1e4008972c9094b7f8400cde",
+    "bytes": 1790
+  },
+  {
+    "path": "public/index.html",
+    "sha256": "5bd5c10af1102cd1591749ffff6d990e10372228e291557ad973397f6b1696b7",
+    "bytes": 14854
+  },
+  {
+    "path": "public/style.css",
+    "sha256": "201f30ae9261fde68ed94902e3fd1d02c231953a56527bf2c9bca35d72a7446d",
+    "bytes": 19211
+  },
+  {
+    "path": "public/app.js",
+    "sha256": "66e2d983bc4d9e1294104255f4c2ff875bd1a8c4df1d9841e4fc118e8da8d30b",
+    "bytes": 20782
+  },
+  {
+    "path": "public/favicon.svg",
+    "sha256": "e9fda0d6c4e96386e4eabc1a6bbaae491116e8d9b7e4b323acfd20f433ae9289",
+    "bytes": 286
+  },
+  {
+    "path": "tests/smoke.cjs",
+    "sha256": "3b45de45eab03a78693390d94973214001fb8e54cae122a134e06c14f3d0646f",
+    "bytes": 5722
+  },
+  {
+    "path": "tests/views.cjs",
+    "sha256": "a16f354be12e69af88d92addec58eac810028309bf97038a9a91635b645255ed",
+    "bytes": 1245
+  }
+]
