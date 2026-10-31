@@ -2,8 +2,6 @@
 
 **Repository status:** Private, invitation-only development. Contributor onboarding documents are in [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). No final open-source license has been approved; see [LICENSE-STATUS.md](LICENSE-STATUS.md).
 
-Built from mjwatzmedia's AI for Advocacy brief at Malithi's request.
-
 ## Status
 
 A functional, session-only planning prototype. This is NOT a live AI service, source-verification engine, legal service, or production launch. The roadmap uses a transparent keyword match plus guided templates. No actual office, deadline, legal requirement, or procedure is verified. User-added sources remain explicitly unverified.
