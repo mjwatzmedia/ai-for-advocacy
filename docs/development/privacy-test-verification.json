@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-31",
+  "base_commit": "da96749944d6cc302ecfe2ddcca93dca91ca07ce",
+  "privacy_regression_before_fix": "FAIL: cleared case remains in hidden DOM/attributes",
+  "npm_test": {
+    "server": "isolated loopback ephemeral port",
+    "suites": [
+      {
+        "suite": "smoke",
+        "exitCode": 0
+      },
+      {
+        "suite": "views",
+        "exitCode": 0
+      },
+      {
+        "suite": "privacy",
+        "exitCode": 0
+      }
+    ]
+  },
+  "privacy": {
+    "result": "PASS",
+    "cancelPreservesCase": true,
+    "acceptedClearPurgesDOMAndState": true,
+    "newCaseAndExportIsolated": true,
+    "reloadClearsSession": true,
+    "unexpectedRequests": 0,
+    "browserErrors": 0
+  },
+  "axe_smoke": {
+    "desktop": [],
+    "mobile": []
+  },
+  "view_checks": [
+    {
+      "width": 1440,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "actions",
+      "violations": []
+    }
+  ],
+  "portability": {
+    "scope": "Fresh npm ci in a temporary directory on the same VM, no platform environment, runner invoked from another working directory. Not a different-machine test.",
+    "fresh_install_exit": 0,
+    "unrelated_working_directory_all_suites_exit": 0,
+    "injected_contrast_violation_exit": 1,
+    "invalid_python_startup_exit": 1
+  },
+  "limitations": [
+    "Automated browser and axe checks are not a complete security or accessibility audit.",
+    "Clean install uses same VM and cached browser, not independent-machine reproduction.",
+    "No GitHub Actions or deployment configured.",
+    "In-page reset cannot erase downloaded files, clipboard, browser memory or device backups."
+  ]
+}

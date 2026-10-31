@@ -14,17 +14,32 @@ third-party Python requirements, database, API key, PromptQL client library or A
 Use HTTPS on a real host: browser cryptographic APIs may not work on plain non-localhost HTTP.
 The Python server is a prototype static server, not a hardened production launch configuration.
 
-## Test dependencies and limitations
+## Test dependencies and execution
 
-Use Node >=22.12 (the locked axe wrapper requires this), npm and Chromium.
-The initial verification machine used Node 24.22.0 and npm 11.19.0.
-`npm ci` installs the locked Playwright 1.64.1 and axe packages (4.14.0).
-The original `npm test` is a failing generated placeholder, not the test runner.
-The preserved direct CJS scripts assume port 8080 and absolute deployment output paths.
-Do not run them unchanged against the live service or overwrite its test artifacts.
-The baseline verifier documented in `../audit/BASELINE.md` runs a temporary copy,
-changes only test URL/output paths there, installs dependencies and checks the same workflows.
-A later approved development branch should make tests portable and repair npm test.
+Use Node >=22.12, npm, Python3.10+ and Playwright Chromium. From a fresh checkout:
+
+```sh
+npm ci
+npx playwright install chromium
+npm test
+```
+
+Tests start an ephemeral loopback server using a temporary asset copy; no running server
+or fixed deployment path is needed. Reports go to ignored `test-results/` by default.
+Individual suites and platform prerequisites are documented in the root README.
+There is no newly configured GitHub Actions workflow; tests must be run explicitly.
+
+The preservation commit `da96749944d6cc302ecfe2ddcca93dca91ca07ce` intentionally
+retains the original failing npm placeholder and nonportable scripts. Historical audit files
+and `run-baseline-verification.py` apply to that original revision only. For baseline recovery,
+use a **separate** checkout at that SHA rather than replacing an active working tree:
+
+```sh
+git clone https://github.com/mjwatzmedia/ai-for-advocacy.git baseline-recovery
+cd baseline-recovery
+git checkout --detach da96749944d6cc302ecfe2ddcca93dca91ca07ce
+python3 docs/audit/run-baseline-verification.py
+```
 
 ## What independence means
 
@@ -43,13 +58,17 @@ private chat/wiki history or user-downloaded files. Users must export before clo
 The current Markdown export is not a lossless importable serialized case.
 Do not add actual case files to this repository.
 
-## Source fidelity and known defects
+## Source fidelity and reset behavior
 
-`../audit/preserved-source-manifest.json` lists the original source-file SHA-256 hashes.
-All original application/test/package files were copied without modification.
-The known reset defect leaves previously rendered source text in hidden DOM until reload.
-Do not use sensitive real data. The ISC metadata and test limitations above are known,
-not fixed in this preservation commit. No claim of verified civic/legal guidance is made.
+`../audit/preserved-source-manifest.json` lists the **original baseline** source hashes.
+Later approved development commits deliberately change some of those files; their hashes
+are not expected to match the historical manifest. The initial reset defect was hidden DOM
+residue; the cleanup branch explicitly clears rendered case content as well as state and
+adds a reproducing regression test. It does not add durable case storage or data migration.
+Clearing the page cannot delete downloaded exports, clipboard contents, browser backups,
+or copies held by extensions, and is not a secure-erasure guarantee. Do not use sensitive real data.
+The generated ISC metadata remains unchanged; final licensing still requires approval.
+No claim of verified civic/legal guidance is made.
 
 ## Rollback and synchronization
 
