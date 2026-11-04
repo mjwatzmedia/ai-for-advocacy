@@ -7,13 +7,13 @@ const assert = require('node:assert/strict');
 
 async function main() {
   const requested = process.argv.slice(2);
-  const allowed = ['smoke', 'views', 'privacy'];
+  const allowed = ['smoke', 'views', 'privacy', 'roadmap'];
   const suites = requested.length ? requested : allowed;
   assert.ok(suites.every(name => allowed.includes(name)), 'Unknown test suite');
   const root = path.resolve(__dirname, '..');
   const output = path.resolve(process.env.TEST_OUTPUT_DIR || path.join(root, 'test-results'));
   fs.mkdirSync(output, {recursive:true});
-  const env = Object.fromEntries(Object.entries(process.env).filter(([key]) => !key.startsWith('PROMPTQL_')));
+  const env = Object.fromEntries(Object.entries(process.env).filter(([key]) => !key.startsWith('PROMPTQL_') && !/^(OPENAI|GEMINI)_/.test(key)));
   const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'advocacy-test-'));
   fs.cpSync(path.join(root, 'public'), path.join(scratch, 'public'), {recursive:true});
   const readyFile = path.join(scratch, 'ready.json');
@@ -81,3 +81,4 @@ server.serve_forever()
   }
 }
 main().catch(error => {console.error(error); process.exitCode = 1;});
+

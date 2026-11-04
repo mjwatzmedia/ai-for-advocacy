@@ -6,12 +6,12 @@
 - server.py: Python standard-library static server, readiness endpoint and security headers.
 - Browser state plus DOM-held notes: concern/goal/location, keyword-based candidate roles,
   evidence checklist, manually added unverified sources, options, actions, notes and drafts.
-- Markdown export. No automatic filing, sending, reminders or background jobs.
+- Browser-only OOXML Word (.docx) and Markdown exports, prompt copying and optional local provider requests. No automatic filing, sending, reminders or background jobs.
 - Dev-only Playwright/axe tests; package-lock.json pins transitive versions.
 - Optional publish.py operator utility is platform-specific; runtime is not.
 
-No AI invocation, model prompts, retrieval/index/vector service, source verification,
-jurisdiction rules database, durable cases, accounts or production backend is implemented.
+Optional explicit-consent local OpenAI Responses/Gemini generateContent invocation is implemented in server.py. No retrieval/index/vector service, source verification,
+jurisdiction rules database, durable cases, accounts or production AI backend is implemented.
 Do not describe missing services as present or introduce misleading empty implementation files.
 
 ## Committed product direction; implementation approval pending
@@ -37,3 +37,8 @@ history out of Git. Regional source knowledge must stay separate from reusable l
 
 Until UX implementation is approved, the next work is resolving the full specification,
 first jurisdiction, return/privacy policy and approved model/research budget.
+
+
+## Current AI boundary
+
+See README Optional AI assistance for server configuration and limitations. Provider secrets remain server-side. The local-only JSON endpoint limits request/response sizes, enforces same origin and serializes provider calls. DOCX generation happens in browser memory without libraries or uploading case data. No automatic provider call is made on page load, intake or export.

@@ -4,7 +4,7 @@
 
 ## Status
 
-A functional, session-only planning prototype. This is NOT a live AI service, source-verification engine, legal service, or production launch. The roadmap uses a transparent keyword match plus guided templates. No actual office, deadline, legal requirement, or procedure is verified. User-added sources remain explicitly unverified.
+A session-only planning prototype with editable Word (.docx) and Markdown downloads, a copyable prompt for ChatGPT/Gemini, and optional local OpenAI/Gemini API assistance. The starting roadmap still uses transparent keyword matching and guided templates. No source verification, live web research, automatic sending, legal service, or production AI hosting is provided. User-added sources and AI suggestions remain explicitly unverified.
 
 ## Features
 
@@ -13,12 +13,14 @@ A functional, session-only planning prototype. This is NOT a live AI service, so
 - Source add/edit/remove with HTTP(S)-only links and plain-text rendering.
 - Actions, completion state, optional user-entered dates with required source/basis, response notes.
 - Editable information-request draft; no sending or filing.
-- Markdown export, clear-workspace confirmation, fictional example.
+- Browser-generated Word (.docx) and Markdown exports with notes, sources, actions, draft and optional AI suggestions.
+- Copy a case-specific prompt into your existing ChatGPT/Gemini account, or generate suggestions on a locally configured installation.
+- Clear-workspace confirmation, fictional example.
 - Responsive layout and keyboard-accessible forms/tabs.
 
 ## Privacy and permissions
 
-Concern text never leaves page JavaScript memory. No API calls, analytics, storage, cookies, shared database, AI provider, or background requests are used by application code. External source links open only at the user's direction. Files explicitly exported are saved by the browser. Reloading or closing the page clears entries, subject to browser session behavior. The server serves only static assets and a readiness endpoint; HTTP access logging is disabled. The PromptQL hosting platform and user's device retain their own privacy considerations. Do not enter sensitive details.
+The guided planner and document exports run entirely in page memory. No analytics, storage, cookies, shared database, or automatic provider calls are used. Clicking Generate AI suggestions requires explicit sharing consent; the current workspace then passes through the local server to the chosen configured provider. Copy prompt sends no data automatically, but pasting it elsewhere shares it under that service's policies. The server does not save cases or log requests. OpenAI requests use `store: false`; that is not a promise of zero provider retention. Provider, hosting, device, browser and extension policies still apply. Source URLs are never fetched by this integration. Exports stay on the user's device. Do not enter sensitive details.
 
 The web service does not use PromptQL platform tokens or request visitor permissions. Publishing the app artifact is a separate operator action, not an application capability. The artifact is available to authorized viewers of its owning PromptQL bot, not an unrestricted public website.
 
@@ -47,13 +49,17 @@ instructions (or `npx playwright install --with-deps chromium` with appropriate 
 `npm test` starts and stops its own **isolated loopback server on an ephemeral port**,
 serving a temporary copy of the assets with the real Python handler. It does not reuse
 or change a running prototype. It removes `PROMPTQL_*` variables from test subprocesses.
-No external account, API key, PromptQL installation, or running application server is required.
+No external account, API key, PromptQL installation, or running application server is required. Tests exclude provider credentials and use synthetic fixtures/mocked provider replies.
 
 **Pull request CI:** `.github/workflows/tests.yml` runs `npm ci`, installs Chromium and
 its Linux dependencies, then runs `npm test` on GitHub-hosted Ubuntu for opened, updated
 and reopened pull requests. It uses read-only repository permissions and no application
 or deployment secrets. Failed tests fail the check; no deployment occurs. Branch-protection
 requirements are not configured by this workflow.
+
+Python provider/HTTP tests: `python3 -m unittest discover -s tests -p 'test_*.py'`.
+
+A preinstalled Chromium can be selected with `TEST_BROWSER_EXECUTABLE=/absolute/path/to/chromium`.
 
 Individual suites: `npm run test:smoke`, `npm run test:views`, `npm run test:privacy`.
 To invoke the runner from another directory, use `node /path/to/repository/tests/run.cjs`.
@@ -88,3 +94,26 @@ This repository is currently private. Request access from the maintainer before 
 ## Next design decisions
 
 Confirm the first country/region, initial testers and first real issue, and privacy/retention rules before integrating live AI, jurisdiction-specific primary-source retrieval, or durable accounts. Nothing in this list is implemented or a committed delivery schedule.
+
+
+## Optional AI assistance
+
+Without any setup, use **Copy prompt for ChatGPT or Gemini**, review it, paste it into your chosen service, then paste useful output into **Editable AI suggestions**. Those suggestions are included in exports. This app does not log into or reuse your ChatGPT/Google account.
+
+For local in-app generation, configure one provider using environment variables:
+
+- OpenAI: `OPENAI_API_KEY` and `OPENAI_MODEL`.
+- Google Gemini: `GEMINI_API_KEY` and `GEMINI_MODEL` (model identifier only).
+
+Choose a text-generation model supported by your provider account. Example variable names are in `.env.example`; this file is documentation, not an automatically loaded secrets file. Set variables in your shell/service environment; never commit real keys or put them in browser code. Start `python3 server.py` and open `http://127.0.0.1:8080`.
+
+The AI endpoint permits only loopback clients and loopback Host headers, exact same-origin requests, JSON with the app's request header, explicit consent, a bounded payload, and one generation at a time. It is a local development integration, not a public AI service. Remote/PromptQL visitors can use prompt copying and local Word downloads. A hosted AI service requires authentication, per-user abuse/budget controls, approved provider/data policies and deployment work before removing these restrictions. No remote AI deployment is part of this change.
+
+API requests use OpenAI Responses or Gemini generateContent, no tools or browsing. AI output is unverified editable text, separate from the original roadmap; existing notes/actions are not replaced. Timeouts, missing configuration and provider failures preserve the workspace. Clearing/starting a changed story cancels the browser request and clears suggestions. An already dispatched provider call may still complete or incur charges.
+
+A provider API key/model with usable quota is required for in-app AI. Account access and live model quality must be checked by the operator; automated tests use mocks and do not establish live provider availability.
+
+Official API references:
+- https://developers.openai.com/api/docs/guides/text
+- https://developers.openai.com/api/docs/guides/migrate-to-responses
+- https://ai.google.dev/api/generate-content

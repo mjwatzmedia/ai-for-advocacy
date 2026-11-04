@@ -3,7 +3,7 @@
 Thanks for your interest in building accessible, evidence-grounded civic technology.
 
 ## Current stage
-This is an early **non-AI, session-only prototype**. It does not research, verify sources, provide legal advice, or submit communications. The conversational Advocacy Game Plan is a proposed future feature, not shipped software. The official repository is currently private; access is by invitation.
+This is an early **session-only planning prototype**, with optional explicit-consent local AI drafting and browser Word exports. It does not research, verify sources, provide legal advice, or submit communications. The conversational Advocacy Game Plan is a proposed future feature, not shipped software. The official repository is currently private; access is by invitation.
 
 ## Before starting
 1. Read [README.md](README.md), [architecture](docs/ARCHITECTURE.md), [product plan](docs/product/conversational-ux-plan.md), and [security policy](SECURITY.md).
@@ -36,3 +36,4 @@ Clearly separate user allegations, verified facts, interpretations, and unknowns
 
 ## License and ownership
 A final open-source license has **not** been approved. Public visibility alone does not grant permission to reuse the code. The `ISC` field in package metadata is historical initialization metadata and is under review; see [LICENSE-STATUS.md](LICENSE-STATUS.md). Do not assume incoming contributions will be accepted under a particular future license; coordinate with the maintainer first.
+

@@ -40,7 +40,8 @@ withBrowser(async browser=>{
  await page.getByRole('button',{name:'Create / refresh draft'}).click();
  if(!await page.locator('#draft-text').inputValue().then(x=>x.includes('Sacramento')))throw Error('Draft not personalized');
  await page.locator('#followup-notes').fill('Keep this in export.');
- const downloadPromise=page.waitForEvent('download');await page.getByRole('button',{name:'Download workspace'}).click();const download=await downloadPromise;
+ await page.locator('#tab-plan').click();
+ const downloadPromise=page.waitForEvent('download');await page.locator('#export-markdown').click();const download=await downloadPromise;
  const path=await download.path();const md=fs.readFileSync(path,'utf8');if(!md.includes('Keep this in export.')||!md.includes('Government directory')||!md.includes('Personal target'))throw Error('Export incomplete');
  await page.getByRole('tab',{name:'Your roadmap',exact:true}).click();
  await page.screenshot({path:output('roadmap.png'),fullPage:true});
@@ -65,3 +66,4 @@ withBrowser(async browser=>{
  console.log(JSON.stringify({functional:'PASS',browserErrors:errors.length,dataRequests:posted.length,exportBytes:md.length,accessibility:reports},null,2));
  if(reports.desktop.length||reports.mobile.length)throw Error('Accessibility violations; see accessibility.json');
 }).catch(e=>{console.error(e);process.exit(1)});
+
