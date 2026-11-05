@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-04",
+  "main_sha": "d1adb168b4db7c04d0641ce5d15d59fb9945e950",
+  "dependency_pr": 3,
+  "base_sha": "60f2de37410ac310cc25ebad297634797d3fe1cb",
+  "branch": "feat/case-file-roundtrip",
+  "baseline_browser_suites": 4,
+  "updated_browser_suites": {
+    "server": "isolated loopback ephemeral port",
+    "suites": [
+      {
+        "suite": "smoke",
+        "exitCode": 0
+      },
+      {
+        "suite": "views",
+        "exitCode": 0
+      },
+      {
+        "suite": "privacy",
+        "exitCode": 0
+      },
+      {
+        "suite": "roadmap",
+        "exitCode": 0
+      },
+      {
+        "suite": "casefile",
+        "exitCode": 0
+      }
+    ]
+  },
+  "model_unit_checks": 24,
+  "python_unit_tests": 3,
+  "python_result": "PASS; inherited HTTPError ResourceWarnings on Python3.14",
+  "case_file": {
+    "result": "PASS",
+    "roundtrip": true,
+    "invalidAtomic": true,
+    "consentNotRestored": true,
+    "goalCorrectionPreservesEdits": true,
+    "noNetworkOrStorage": true,
+    "browserErrors": 0
+  },
+  "axe": {
+    "desktop": [],
+    "mobile": []
+  },
+  "responsive_panels": [
+    {
+      "width": 1440,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 768,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tab": "actions",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "plan",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "sources",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tab": "actions",
+      "violations": []
+    }
+  ],
+  "live_model_calls": 0,
+  "official_document_retrievals": 0,
+  "deployed_service": "advocacy-app.service port8080 /workspace/advocacy",
+  "deployment_modified": false,
+  "live_source_hashes": {
+    "public/index.html": "5bd5c10af1102cd1591749ffff6d990e10372228e291557ad973397f6b1696b7",
+    "public/app.js": "66e2d983bc4d9e1294104255f4c2ff875bd1a8c4df1d9841e4fc118e8da8d30b",
+    "server.py": "b751a192338c008a181f5eb63289ec7e2b4c60c12710aff86d76ebae94941c6e"
+  },
+  "scope": "Tests on isolated temporary server on same VM; provider replies mocked; no live model, current official-source research, staged auth or independent-machine claim."
+}

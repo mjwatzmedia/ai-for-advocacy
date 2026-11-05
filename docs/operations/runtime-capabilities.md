@@ -1,0 +1,17 @@
+# Runtime capabilities — verified routes and boundaries
+
+Inspected 2026-11-04 against PromptQL App Artifacts (identity, visitor permissions, persistent service) and Platform APIs HTTP documentation, and the actual enabled service. Product documentation is available inside PromptQL; the portable routes below require no private wiki access.
+
+| Need | Development tools | Visitor application route / limitation | Portable fallback |
+|---|---|---|---|
+| Model calls | Program runtime supports call_llm | No documented general HTTP model endpoint in the inspected Platform API. Do not invent one or embed shell-user credentials. PR3 local adapter is not remotely authorized. | Provider HTTPS backend adapter + configured secret/auth/budget |
+| Secrets | Integration credentials injected by platform; shell env is not an app vault | No dedicated generic app-secret vault verified. Never cache PROMPTQL_USER_JWT for visitors or return tokens to JS. | systemd LoadCredential / host-managed secret manager after approval |
+| Search | Connected integrations can support search | Visitor integration calls need declared scope plus visitor consent and actual connected provider; none configured for this app. Chat search capability is not app capability. | Curated local public corpus first; optional approved search API later |
+| Webpages/PDFs | VM can fetch public HTTPS | Application can implement bounded fetch/parsing; this is new code, not automatic research. Plain network capability is not SSRF safety. | Allowlisted public fetch + HTML parser and pinned text-PDF library; OCR unavailable until added |
+| Background | VM shell/background jobs and systemd | Persistent workers can be built but idle/restart/quotas and retry durability must be addressed. No research queue exists. | Bounded synchronous slice initially; worker later only if needed |
+| Auth/access | PromptQL app access follows owning bot | Proxied authenticated requests include server-side X-PromptQL-Visitor-Token; sub is visitor identity, never body identity. Trust only behind controlled proxy; direct requests cannot self-assert privilege. API consent scopes do not exist merely because identity does. | Approved identity gateway/OIDC and server-side allowlist; don't expose local endpoint |
+| Hosting | Enabled systemd service + App Artifact declaration | Verified original static service running. Declaring artifact doesn't deploy files. Public-room bot visibility is not a private invited staging allowlist. | Dedicated private staging and independently deployable service |
+| Downloads | Artifact files available to users | Browser Blob download works; Word/Markdown already tested. JSON files in M1 are explicit local downloads, not server persistence. | Same browser mechanisms outside PromptQL |
+| Logs/limits | Platform model/developer quota exists | Not application per-user cost/rate control. Current no-access-log handler; provider retention independent. | Aggregate sanitized events, per-user/global caps, priced usage ledger; no raw cases |
+
+Visitor Platform API calls use the token from that request, narrowed by the app's declared permissions and approved consent. No operator-token fallback. This increment adds no required_permissions and no new external call. Application state is session-only, in each page; a case file is not encrypted. Claims of staged auth, native research or live model quality require separate testing.

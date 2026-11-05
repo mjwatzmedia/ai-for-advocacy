@@ -60,7 +60,7 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_response(204)
             self.end_headers()
             return
-        if self.path.split('?')[0] not in ('/', '/index.html', '/app.js', '/style.css', '/favicon.svg'):
+        if self.path.split('?')[0] not in ('/', '/index.html', '/app.js', '/case-model.js', '/style.css', '/favicon.svg'):
             self.send_error(404)
             return
         super().do_GET()

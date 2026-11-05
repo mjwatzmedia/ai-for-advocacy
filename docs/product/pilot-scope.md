@@ -1,0 +1,9 @@
+# Proposed first pilot — Tucson/Pima published-proposal participation
+
+Proposal for M2, not an enabled coverage claim. Intended testers: invited adults using fictional, nonsensitive cases. Output: an editable Game Plan to understand one published local proposal and prepare a personally reviewed public comment, with exact source references, unknowns and optional personal target dates.
+
+Demo: a fictional neighborhood resident asks how to understand a published land-use proposal and provide input. First establish whether the location is City of Tucson or unincorporated Pima County, which institution published the actual proposal, and whether the process is supported. Retrieve the official notice/proposal plus applicable participation guidance and current meeting/agenda record; identify factual gaps and draft a comment without sending it. Do not invent a project, hearing, contact or date.
+
+Minimum verified corpus before implementation acceptance: official jurisdiction/institution scope page; published participation guidance; one current official proposal/notice and relevant agenda/document, with publisher ownership, retrieval date, document status and hash. No registry entry is called verified in this increment: current primary documents still require inspection. Refresh before live evaluation and before relying on date-sensitive content; stale/missing pages yield partial findings.
+
+Exclude legal appeals, rights-preserving deadlines, emergency/safety advice, eligibility determinations, representation, automated filing and comprehensive environmental permitting. A mine may be state, federal, tribal, cross-jurisdiction or outside this workflow; the app must disclose lack of coverage and ask for the original notice rather than invent a local authority. Unknown location or process stays unresolved. The campaign's political position belongs to the user.

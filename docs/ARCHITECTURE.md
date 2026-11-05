@@ -14,7 +14,7 @@ Optional explicit-consent local OpenAI Responses/Gemini generateContent invocati
 jurisdiction rules database, durable cases, accounts or production AI backend is implemented.
 Do not describe missing services as present or introduce misleading empty implementation files.
 
-## Committed product direction; implementation approval pending
+## Product direction and isolated implementation
 
 See product/master-development-specification.md and product/conversational-ux-plan.md.
 The UX direction is conversation-first with an editable/exportable Advocacy Game Plan;
@@ -35,8 +35,7 @@ Development follows reviewed branches, tests, commits, push and PRs. Merge and r
 require their own approval. Keep secrets, confidential cases and unnecessary personal
 history out of Git. Regional source knowledge must stay separate from reusable logic.
 
-Until UX implementation is approved, the next work is resolving the full specification,
-first jurisdiction, return/privacy policy and approved model/research budget.
+MJ Watz authorized reversible isolated implementation on 2026-11-04. See product/functional-ai-launch-plan.md for the current staged scope, dependencies and tests. This does not authorize merge, live provider spending or deployment. The historical UX plan remains available but its initial backup/access blockers are superseded.
 
 
 ## Current AI boundary
