@@ -4,8 +4,8 @@
 
 - public/index.html, style.css, app.js and favicon.svg: browser-only HTML/CSS/JavaScript.
 - server.py: Python standard-library static server, readiness endpoint and security headers.
-- Browser state plus DOM-held notes: concern/goal/location, keyword-based candidate roles,
-  evidence checklist, manually added unverified sources, options, actions, notes and drafts.
+- Canonical versioned case state (`public/case-model.js`) plus compatibility renderers: concern/goal/location, keyword-based candidate roles,
+  evidence checklist, manually added unverified sources, options, actions, notes and drafts. Explicit schema-v1 JSON files preserve progress, structured records and unsaved edits without browser/server storage.
 - Browser-only OOXML Word (.docx) and Markdown exports, prompt copying and optional local provider requests. No automatic filing, sending, reminders or background jobs.
 - Dev-only Playwright/axe tests; package-lock.json pins transitive versions.
 - Optional publish.py operator utility is platform-specific; runtime is not.
@@ -14,7 +14,7 @@ Optional explicit-consent local OpenAI Responses/Gemini generateContent invocati
 jurisdiction rules database, durable cases, accounts or production AI backend is implemented.
 Do not describe missing services as present or introduce misleading empty implementation files.
 
-## Committed product direction; implementation approval pending
+## Product direction and isolated implementation
 
 See product/master-development-specification.md and product/conversational-ux-plan.md.
 The UX direction is conversation-first with an editable/exportable Advocacy Game Plan;
@@ -23,8 +23,7 @@ That direction does not alter what this baseline implements. The separately name
 UX architecture specification still needs to be supplied for full-text reconciliation.
 
 The conversational plan's GitHub-unverified snapshot is historical (before this baseline).
-See audit/BASELINE.md and the post-push handoff for the preservation results; nothing in
-this backup authorizes the proposed implementation, provider changes or deployment.
+See audit/BASELINE.md for historical preservation results. The later owner-supplied functional launch specification authorizes isolated incremental implementation; provider spending, merge and deployment still require their separate gates.
 
 ## Approval boundaries and maintenance
 
@@ -35,8 +34,7 @@ Development follows reviewed branches, tests, commits, push and PRs. Merge and r
 require their own approval. Keep secrets, confidential cases and unnecessary personal
 history out of Git. Regional source knowledge must stay separate from reusable logic.
 
-Until UX implementation is approved, the next work is resolving the full specification,
-first jurisdiction, return/privacy policy and approved model/research budget.
+MJ Watz authorized reversible isolated implementation on 2026-11-04. See product/functional-ai-launch-plan.md for the current staged scope, dependencies and tests. This does not authorize merge, live provider spending or deployment. The historical UX plan remains available but its initial backup/access blockers are superseded.
 
 
 ## Current AI boundary

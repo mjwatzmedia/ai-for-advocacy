@@ -46,7 +46,7 @@ python3 docs/audit/run-baseline-verification.py
 
 ## What independence means
 
-The runtime needs only public/ and server.py (or any equivalent static host).
+The manual planner, DOCX/Markdown and JSON case files need public/ and a static host; optional local AI also needs server.py and configured provider API access. No provider is needed for the manual path.
 The separate publish.py utility uses PromptQL environment variables to publish
 artifacts; it is optional, is NOT imported by server.py, and must not run during normal startup.
 Never put actual environment credentials into source control or browser code.
@@ -58,7 +58,7 @@ is activated by cloning or pushing this repository.
 The prototype has no case database, accounts or server-side session persistence.
 User entries exist only in each visitor's open page. Git does not back up that memory,
 private chat/wiki history or user-downloaded files. Users must export before closing/reloading.
-The current Markdown export is not a lossless importable serialized case.
+Word and Markdown are readable exports, not lossless backups. This development increment adds explicit versioned JSON case files for validated browser-only restore; they are not encrypted.
 Do not add actual case files to this repository.
 
 ## Source fidelity and reset behavior
@@ -80,5 +80,5 @@ post-push handoff, not self-referentially inside that commit. Keep it available 
 Future code changes use approved task branches and pull requests; no force push,
 unapproved rewrite or deployment. Fetch and inspect remote changes before each task.
 Connecting GitHub alone does not continuously synchronize the PromptQL workspace.
-No workflow, webhook, hosting integration or automatic deployment is configured by this baseline.
+The repository has a test-only GitHub Actions workflow. No automatic deployment is configured by that workflow; publishing is a separate approved operation.
 External account-side deployment settings were not fully inspectable through the GitHub App.

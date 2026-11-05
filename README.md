@@ -2,6 +2,12 @@
 
 **Repository status:** Private, invitation-only development. Contributor onboarding documents are in [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). No final open-source license has been approved; see [LICENSE-STATUS.md](LICENSE-STATUS.md).
 
+## Implementation increment — case-file return
+
+This branch depends on draft PR #3 (base `60f2de37410ac310cc25ebad297634797d3fe1cb`); it does not merge or deploy it. See the [executable launch backlog](docs/product/functional-ai-launch-plan.md), [case format](docs/development/case-files.md), [runtime capabilities](docs/operations/runtime-capabilities.md), [proposed pilot](docs/product/pilot-scope.md) and [inactive staging plan](docs/operations/staging.md).
+
+Use **Download case file (.json)** to save a lossless, versioned backup to your device. After closing/reloading, choose **Restore case file**. Restore validates schema/version/size/references, asks before replacing the page, and never restores AI sharing consent. Sources and suggestions stay unverified. These files are **not encrypted** and may contain private writing; keep them out of Git/issues/chat. Word and Markdown are readable documents, not importable backups. No accounts, automatic browser saving, or server case storage is introduced.
+
 ## Status
 
 A session-only planning prototype with editable Word (.docx) and Markdown downloads, a copyable prompt for ChatGPT/Gemini, and optional local OpenAI/Gemini API assistance. The starting roadmap still uses transparent keyword matching and guided templates. No source verification, live web research, automatic sending, legal service, or production AI hosting is provided. User-added sources and AI suggestions remain explicitly unverified.
@@ -93,7 +99,7 @@ This repository is currently private. Request access from the maintainer before 
 
 ## Next design decisions
 
-Confirm the first country/region, initial testers and first real issue, and privacy/retention rules before integrating live AI, jurisdiction-specific primary-source retrieval, or durable accounts. Nothing in this list is implemented or a committed delivery schedule.
+The first proposed research pilot is bounded Tucson/Pima public participation using fictional cases; it is not enabled jurisdiction coverage. The functional launch backlog records authorized reversible work and the live-provider/spending/hosting approval gates. Session-only plus explicit case files is the return default; no accounts are planned for M1.
 
 
 ## Optional AI assistance

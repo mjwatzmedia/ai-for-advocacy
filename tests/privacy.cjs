@@ -12,7 +12,7 @@ withBrowser(async browser => {
   // All application requests must be local static GETs. Count GET exfiltration too.
   page.on('request', request => {
     const url = new URL(request.url());
-    const allowed = ['/', '/index.html', '/app.js', '/style.css', '/favicon.svg'];
+    const allowed = ['/', '/index.html', '/app.js', '/case-model.js', '/style.css', '/favicon.svg'];
     if (url.origin !== new URL(baseURL).origin || request.method() !== 'GET' || !allowed.includes(url.pathname) || url.search) unexpected.push(request.url());
   });
   await page.goto(baseURL);

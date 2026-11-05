@@ -1,3 +1,5 @@
+> **Historical snapshot (2026-10-31):** the access/backup/authorization claims below describe the initial planning session, not current status. Repository preservation is verified. MJ Watz authorized reversible isolated implementation on 2026-11-04; no merge, paid activation or deployment. The [functional launch backlog](functional-ai-launch-plan.md) supersedes the stale operational blockers. The original plan is retained below unchanged.
+
 # AI for Advocacy — Conversational UX Requirements and Incremental Implementation Plan
 
 **Planning revision: October 31, 2026. Status: proposed implementation; no application changes authorized or performed.**

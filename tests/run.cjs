@@ -6,8 +6,10 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 
 async function main() {
+  const unit = require('node:child_process').spawnSync(process.execPath,[require('node:path').join(__dirname,'case-model.cjs')],{stdio:'inherit'});
+  if(unit.status!==0)throw Error('Case model validation failed');
   const requested = process.argv.slice(2);
-  const allowed = ['smoke', 'views', 'privacy', 'roadmap'];
+  const allowed = ['smoke', 'views', 'privacy', 'roadmap', 'casefile'];
   const suites = requested.length ? requested : allowed;
   assert.ok(suites.every(name => allowed.includes(name)), 'Unknown test suite');
   const root = path.resolve(__dirname, '..');

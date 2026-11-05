@@ -4,13 +4,13 @@
 AI for Advocacy is an experimental, session-only planning prototype, **not** a secure case-management service, legal service, live AI engine, or emergency reporting channel. Do not enter or upload sensitive case details, minors' information, private correspondence, secrets, or real identity records.
 
 ## Reporting a vulnerability
-**Do not disclose exploitable details in a public GitHub issue or pull request.** Contact the repository owner through a private GitHub message/channel or use GitHub's private vulnerability reporting feature **if it is enabled**. The maintainer should publish a dedicated security contact before inviting outside testers. If no private reporting channel is available, request one without including exploit details.
+**Do not disclose exploitable details in a public GitHub issue or pull request.** Use GitHub's private vulnerability reporting feature **if it is enabled**, or a private contact channel explicitly agreed with the maintainer. GitHub has no general private-message inbox. The maintainer should publish a dedicated security contact before inviting outside testers. If no private reporting channel is available, request one without including exploit details.
 
 Please include affected version/commit, reproducible steps using synthetic data, impact, and any suggested mitigation. Avoid testing against other users, production services, or systems you do not control.
 
 ## Current controls and limitations
-- Browser-only state; no app-side account, database, analytics, model, or retrieval service.
-- Text-only rendering for user entries, HTTP(S) source-link validation, and server security headers.
+- Session-only browser case state and explicit unencrypted JSON downloads/restore; no accounts, case database, analytics or retrieval. Optional local-only provider suggestions require consent and server configuration; they are not verified research.
+- Plain-text rendering, HTTP(S) source-link validation, strict bounded/versioned case imports and server security headers. Imported verification badges are not accepted. Case files remain untrusted user-supplied data, not official findings.
 - Automated privacy regression, smoke and accessibility tests.
 - Clearing a workspace removes app state and rendered case content; it is **not** secure deletion from device memory, downloads, clipboard, backups, or extensions.
 - Hosting platform, browser, device, network, and third-party links have independent risks.

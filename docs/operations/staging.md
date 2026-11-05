@@ -1,0 +1,13 @@
+# Private staging preparation — NOT activated
+
+No service/artifact, credential, paid provider or public endpoint is activated by this guide. Current original port8080 service must not be replaced. PR3's loopback/client/Host/origin checks remain intact. A proxy that forwards to localhost does not by itself authorize remote model use.
+
+Before activation, owner approves provider/model, maximum live spend, authorized tester IDs and exposure/hosting. Configure a distinct release checkout at an approved SHA, separate systemd unit and port, server secret via host manager or systemd LoadCredential, HTTPS through a controlled gateway, and an explicit tester allowlist. Never copy shell PROMPTQL_USER_JWT into a service. For PromptQL-hosted identity, read the trusted proxied visitor token per request and key authorization on sub; do not accept a forged identity header on a directly exposed port. The current public-room app must not be used as private staging merely by changing its files.
+
+New runtime implementation must enforce same-origin JSON/session protections, per-user request and token/cost caps, global concurrency, body/output/time/document limits, cancellation and honest provider retention notice. Do not silently remove local-only guards to make remote AI work. Health returns no case data. Sanitized logs may include request ID/duration/status/aggregate usage, not prompts, raw sources, case text, secrets or visitor tokens. Public document cache and private in-page case state stay separate.
+
+Activation checklist: exact release SHA; verified secure secret handling; no model calls before consent; invited/non-invited/anonymous tests; SSRF/grounding regression; actual browser complete fictional path; maximum live spend and source/model/prompt versions recorded. Stop on invented authority/contact/deadline/citation. Test restore, cancellation, manual fallback and no accidental communication.
+
+Deployment commands will target the approved dedicated unit only: `sudo systemctl start advocacy-staging.service` after a reviewed unit and configuration exist. No such unit is installed by this increment. Rollback: stop that dedicated unit, restore its last approved release/configuration, restart and verify /readyz plus smoke test. Do not stop/restart advocacy-app.service. Do not claim rollback verified until that staged exercise is performed.
+
+Portable hosting: same JS/Python code with independently configured provider/auth/secrets, no PromptQL library dependency. Current local Python prototype is not a hardened public AI server; production hosting requires the above implementation, not a renamed environment file.
