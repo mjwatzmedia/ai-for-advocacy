@@ -41,10 +41,10 @@ function hydrateCase(next){
 }
 function exportCase(){try{downloadFile(new Blob([AdvocacyCase.serialize(captureCase())],{type:'application/json'}),'my-advocacy-case.json');$('case-file-status').textContent='Case file downloaded. It contains your writing and is not encrypted. Word/Markdown are readable exports, not lossless backups.';}catch(error){$('case-file-status').textContent=error.message;}}
 async function importCase(file){
- const generation=++importGeneration;const startingCase=caseData,startingRevision=caseData.revision.number;
+ const generation=++importGeneration;const startingCase=caseData,startingSnapshot=JSON.stringify(captureCase());
  try{if(!file)return;if(file.size>AdvocacyCase.MAX_BYTES)throw Error('Case file: maximum file size is 1,000,000 bytes.');
  const raw=await file.text();if(generation!==importGeneration)return;
- const next=AdvocacyCase.parse(raw);if(caseData!==startingCase||caseData.revision.number!==startingRevision)throw Error('Case file: workspace changed while reading. Please choose the file again.');
+ const next=AdvocacyCase.parse(raw);if(caseData!==startingCase||JSON.stringify(captureCase())!==startingSnapshot)throw Error('Case file: workspace changed while reading. Please choose the file again.');
  if(!confirm('Replace the current page with this case file? Download your current case first. Imported sources and suggestions remain unverified. AI sharing consent will be off.'))return;
  if(generation!==importGeneration)return;hydrateCase(next);
  }catch(error){if(generation===importGeneration)$('case-file-status').textContent=error.message;}
