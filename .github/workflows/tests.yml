@@ -33,5 +33,8 @@ jobs:
         run: npm ci
       - name: Install Chromium and Linux dependencies
         run: npx playwright install --with-deps chromium
+      - name: Run provider and HTTP unit tests
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
       - name: Run browser, accessibility and privacy suites
         run: npm test
+

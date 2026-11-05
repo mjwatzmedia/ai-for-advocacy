@@ -25,6 +25,7 @@ with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
         z.write(ROOT/name,'ai-for-advocacy/'+name)
     for folder in ['public','tests']:
         for path in (ROOT/folder).iterdir():
-            if path.suffix in ['.html','.css','.js','.svg','.cjs','.json']:
+            if path.suffix in ['.html','.css','.js','.svg','.cjs','.json','.py']:
                 z.write(path,'ai-for-advocacy/'+str(path.relative_to(ROOT)))
 put('ai-for-advocacy-source',archive.read_bytes(),'file','application/zip','AI for Advocacy — Source Code & Tests','ai-for-advocacy-source.zip')
+

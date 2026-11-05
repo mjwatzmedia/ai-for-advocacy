@@ -15,7 +15,8 @@ function settings() {
   return {baseURL:baseURL.href, output:name => path.join(outputDir, name)};
 }
 async function withBrowser(run) {
-  const browser = await chromium.launch({headless:true});
+  const browser = await chromium.launch({headless:true, ...(process.env.TEST_BROWSER_EXECUTABLE ? {executablePath:process.env.TEST_BROWSER_EXECUTABLE, args:['--no-sandbox', '--disable-dev-shm-usage']} : {})});
   try { await run(browser); } finally { await browser.close(); }
 }
 module.exports = {settings, withBrowser};
+

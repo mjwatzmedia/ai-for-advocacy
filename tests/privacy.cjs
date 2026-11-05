@@ -46,6 +46,8 @@ withBrowser(async browser => {
     html:document.querySelector('#workspace-view').innerHTML,
     fields:[...document.querySelectorAll('input,textarea,select')].map(node => [node.id,node.value,node.checked])
   }));
+  await page.locator('#ai-output').fill(marker+' unverified AI suggestions');
+  await page.locator('#ai-prompt-text').evaluate((node, marker) => {node.value=marker;node.hidden=false;}, marker);
   const before = await snapshot();
   page.once('dialog', dialog => dialog.dismiss());
   await page.locator('#clear-workspace').click();
@@ -91,7 +93,7 @@ withBrowser(async browser => {
   assert.equal(await page.locator('.action-item').count(), 2);
   assert.equal(await page.locator('#draft-text').inputValue(), '');
   const downloadPromise = page.waitForEvent('download');
-  await page.locator('#export-plan').click();
+  await page.locator('#export-markdown').click();
   const download = await downloadPromise;
   const text = fs.readFileSync(await download.path(), 'utf8');
   assert.ok(text.includes('Second synthetic case'));
@@ -105,3 +107,4 @@ withBrowser(async browser => {
   fs.writeFileSync(output('privacy.json'), JSON.stringify({result:'PASS',cancelPreservesCase:true,acceptedClearPurgesDOMAndState:true,newCaseAndExportIsolated:true,reloadClearsSession:true,unexpectedRequests:unexpected.length,browserErrors:errors.length},null,2)+'\n');
   console.log('Privacy regression: PASS');
 }).catch(error => {console.error(error);process.exitCode=1;});
+
