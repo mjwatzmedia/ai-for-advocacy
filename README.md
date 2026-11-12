@@ -11,17 +11,20 @@ generation remains disabled and untested. This is not a completed conversational
 product or a deployed service. The legacy descriptions below describe the original
 standalone `server.py` planner; use the FastAPI instructions for new research controls.
 
-## Previous implementation increment — case-file return
+## Current development status
 
-This branch depends on draft PR #3 (base `60f2de37410ac310cc25ebad297634797d3fe1cb`); it does not merge or deploy it. See the [executable launch backlog](docs/product/functional-ai-launch-plan.md), [case format](docs/development/case-files.md), [runtime capabilities](docs/operations/runtime-capabilities.md), [proposed pilot](docs/product/pilot-scope.md) and [inactive staging plan](docs/operations/staging.md).
+**Developers: start with [DEVELOPER-HANDOFF.md](docs/fullstack/DEVELOPER-HANDOFF.md).**
+It includes the exact branch, clone/run/test commands, module map and remaining work.
+The research foundation is in **draft PR #5**, not merged into `main`.
 
-Use **Download case file (.json)** to save a lossless, versioned backup to your device. After closing/reloading, choose **Restore case file**. Restore validates schema/version/size/references, asks before replacing the page, and never restores AI sharing consent. Sources and suggestions stay unverified. These files are **not encrypted** and may contain private writing; keep them out of Git/issues/chat. Word and Markdown are readable documents, not importable backups. No accounts, automatic browser saving, or server case storage is introduced.
+The original planner's editable workspace and Word/Markdown/JSON save-and-restore
+remain. Bounded public-page retrieval and review-before-apply structured results
+are implemented. Live AI is disabled and has not been acceptance-tested.
+Specific decision-maker identification, applicable-law analysis, beginner-friendly
+authority explanations and open-ended clarification chat remain incomplete.
+Campaign drafts are templates, not verified recommendations.
 
-## Status
-
-A session-only planning prototype with editable Word (.docx) and Markdown downloads, a copyable prompt for ChatGPT/Gemini, and optional local OpenAI/Gemini API assistance. The starting roadmap still uses transparent keyword matching and guided templates. No source verification, live web research, automatic sending, legal service, or production AI hosting is provided. User-added sources and AI suggestions remain explicitly unverified.
-
-## Features
+## Existing planner features (preserved)
 
 - Three-question intake: concern, desired outcome, location.
 - Editable planning workspace: possible institutional roles, evidence checklist, strategy options, contacts and notes.
@@ -35,11 +38,17 @@ A session-only planning prototype with editable Word (.docx) and Markdown downlo
 
 ## Privacy and permissions
 
-The guided planner and document exports run entirely in page memory. No analytics, storage, cookies, shared database, or automatic provider calls are used. Clicking Generate AI suggestions requires explicit sharing consent; the current workspace then passes through the local server to the chosen configured provider. Copy prompt sends no data automatically, but pasting it elsewhere shares it under that service's policies. The server does not save cases or log requests. OpenAI requests use `store: false`; that is not a promise of zero provider retention. Provider, hosting, device, browser and extension policies still apply. Source URLs are never fetched by this integration. Exports stay on the user's device. Do not enter sensitive details.
+Case writing stays in browser memory unless explicitly exported. There is no case
+database or automatic persistence. Source retrieval sends selected URL requests
+to websites after consent. Separately consented AI sends the concern, goal,
+location and retrieved excerpts to an explicitly configured provider; it is off by default.
+Exports are unencrypted. Keep private cases, tokens and correspondence out of GitHub.
 
-The web service does not use PromptQL platform tokens or request visitor permissions. Publishing the app artifact is a separate operator action, not an application capability. The artifact is available to authorized viewers of its owning PromptQL bot, not an unrestricted public website.
+The development foundation runs independently of PromptQL. This bot's desktop
+preview is a private development environment, not a public production deployment.
+See [developer handoff](docs/fullstack/DEVELOPER-HANDOFF.md) and [SECURITY.md](SECURITY.md).
 
-## Run
+## Run the legacy standalone planner
 
 Python 3.10+; application runtime has no third-party dependencies.
 
@@ -108,10 +117,10 @@ This repository is public. Propose changes through a reviewed pull request; main
 
 ## Next design decisions
 
-The first proposed research pilot is bounded Tucson/Pima public participation using fictional cases; it is not enabled jurisdiction coverage. The functional launch backlog records authorized reversible work and the live-provider/spending/hosting approval gates. Session-only plus explicit case files is the return default; no accounts are planned for M1.
+The development branch has bounded curated US and Arizona/Tucson source starting points, not reliable issue-specific or nationwide jurisdiction coverage. The functional launch backlog records authorized reversible work and the live-provider/spending/hosting approval gates. Session-only plus explicit case files is the return default; no accounts are planned for M1.
 
 
-## Optional AI assistance
+## Legacy standalone planner: optional AI assistance
 
 Without any setup, use **Copy prompt for ChatGPT or Gemini**, review it, paste it into your chosen service, then paste useful output into **Editable AI suggestions**. Those suggestions are included in exports. This app does not log into or reuse your ChatGPT/Google account.
 

@@ -10,7 +10,8 @@
     "test": "node tests/run.cjs",
     "test:smoke": "node tests/run.cjs smoke",
     "test:views": "node tests/run.cjs views",
-    "test:privacy": "node tests/run.cjs privacy"
+    "test:privacy": "node tests/run.cjs privacy",
+    "test:foundation": "cd backend && uv run python -m pytest -q && cd .. && node tests/workspace-adapter.cjs && node tests/research.cjs"
   },
   "keywords": [],
   "author": "",

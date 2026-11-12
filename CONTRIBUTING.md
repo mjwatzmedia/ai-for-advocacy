@@ -3,7 +3,12 @@
 Thanks for your interest in building accessible, evidence-grounded civic technology.
 
 ## Current stage
-This is an early **session-only planning prototype**, with optional explicit-consent local AI drafting and browser Word exports. It does not research, verify sources, provide legal advice, or submit communications. The conversational Advocacy Game Plan is a proposed future feature, not shipped software. The official repository is currently private; access is by invitation.
+This is a public experimental planning and bounded-retrieval foundation.
+The new research runtime is on `feat/fullstack-research-engine-20261112` in draft PR #5,
+not merged into `main`. Live AI is off; applicable-law/decision-maker explanations and
+conversational clarification remain incomplete. Nothing is submitted or sent.
+See [developer handoff](docs/fullstack/DEVELOPER-HANDOFF.md) for accurate status and setup.
+A final license has not been approved.
 
 ## Before starting
 1. Read [README.md](README.md), [architecture](docs/ARCHITECTURE.md), [product plan](docs/product/conversational-ux-plan.md), and [security policy](SECURITY.md).
@@ -12,6 +17,8 @@ This is an early **session-only planning prototype**, with optional explicit-con
 4. Use fictional or synthetic data for demonstrations and tests.
 
 ## Local development
+
+For the research foundation, follow [clone, run and test instructions](docs/fullstack/DEVELOPER-HANDOFF.md). The commands below run the legacy planner only.
 Requirements: Python 3.10+, Node 22.12+, npm, Playwright Chromium.
 
 ```sh
@@ -26,7 +33,7 @@ Visit http://localhost:8080. On Linux, Playwright may require system libraries (
 ## Change workflow
 - Create a feature/fix/docs branch from current `main`; do not commit directly to `main`.
 - Keep changes scoped; update documentation and tests with behavior changes.
-- Run `npm test` and report results honestly. Browser checks are not a full security audit.
+- Run `npm test` and `npm run test:foundation` after `uv sync --locked` in `backend/`, and report results honestly. Browser checks are not a full security audit.
 - Open a pull request explaining motivation, changes, privacy/security implications, testing, and any deployment/migration impact.
 - Wait for maintainer review. A passing CI check does not authorize merge or deployment.
 - No external API integrations, paid services, user-data persistence, permission changes, or production deployment without explicit maintainer approval.

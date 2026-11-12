@@ -9,7 +9,7 @@ AI for Advocacy is an experimental, session-only planning prototype, **not** a s
 Please include affected version/commit, reproducible steps using synthetic data, impact, and any suggested mitigation. Avoid testing against other users, production services, or systems you do not control.
 
 ## Current controls and limitations
-- Session-only browser case state and explicit unencrypted JSON downloads/restore; no accounts, case database, analytics or retrieval. Optional local-only provider suggestions require consent and server configuration; they are not verified research.
+- Session-only browser case state and explicit unencrypted JSON downloads/restore; no accounts, case database or analytics. The research development branch adds explicit-consent, bounded public-page retrieval, not a general search engine. Optional local-only provider suggestions require consent and server configuration; they are not verified research.
 - Plain-text rendering, HTTP(S) source-link validation, strict bounded/versioned case imports and server security headers. Imported verification badges are not accepted. Case files remain untrusted user-supplied data, not official findings.
 - Automated privacy regression, smoke and accessibility tests.
 - Clearing a workspace removes app state and rendered case content; it is **not** secure deletion from device memory, downloads, clipboard, backups, or extensions.
