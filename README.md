@@ -1,8 +1,17 @@
 # AI for Advocacy — First interaction prototype
 
-**Repository status:** Private, invitation-only development. Contributor onboarding documents are in [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). No final open-source license has been approved; see [LICENSE-STATUS.md](LICENSE-STATUS.md).
+**Repository status:** Public, as authorized by MJ Watz on November 12, 2026. Public visibility does not select a license or authorize deployment. Contributor onboarding documents are in [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). No final open-source license has been approved; see [LICENSE-STATUS.md](LICENSE-STATUS.md).
 
-## Implementation increment — case-file return
+## Development checkpoint — structured research foundation
+
+This development branch adds a FastAPI research backend and a validated adapter
+for the **existing interface**. See [checkpoint, run instructions, tests and limits](docs/fullstack/CHECKPOINT.md).
+Live source retrieval is implemented for bounded curated/selected pages; live AI
+generation remains disabled and untested. This is not a completed conversational
+product or a deployed service. The legacy descriptions below describe the original
+standalone `server.py` planner; use the FastAPI instructions for new research controls.
+
+## Previous implementation increment — case-file return
 
 This branch depends on draft PR #3 (base `60f2de37410ac310cc25ebad297634797d3fe1cb`); it does not merge or deploy it. See the [executable launch backlog](docs/product/functional-ai-launch-plan.md), [case format](docs/development/case-files.md), [runtime capabilities](docs/operations/runtime-capabilities.md), [proposed pilot](docs/product/pilot-scope.md) and [inactive staging plan](docs/operations/staging.md).
 
@@ -95,7 +104,7 @@ modified files. See [recovery instructions](docs/operations/recovery.md) and
 
 ## For prospective collaborators
 
-This repository is currently private. Request access from the maintainer before proposing changes. Start with [CONTRIBUTING.md](CONTRIBUTING.md); use synthetic cases and open a reviewed pull request. No merge, deployment, paid integration, or sensitive-data processing is implied by repository access.
+This repository is public. Propose changes through a reviewed pull request; maintainer approval is still required to merge. Start with [CONTRIBUTING.md](CONTRIBUTING.md); use synthetic cases and open a reviewed pull request. No merge, deployment, paid integration, or sensitive-data processing is implied by repository access.
 
 ## Next design decisions
 

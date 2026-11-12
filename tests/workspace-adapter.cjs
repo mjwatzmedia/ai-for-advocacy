@@ -1,0 +1,17 @@
+'use strict';
+const assert=require('node:assert/strict'), C=require('../public/case-model.js'), W=require('../public/workspace-adapter.js');
+const patch={schemaVersion:1,sources:[{id:'src-test',title:'Official source',url:'https://www.usa.gov/elected-officials',type:'Primary / official document',notes:'Fetched; applicability unverified',publicationDate:'',retrievedAt:'2026-11-12',documentHash:'abc',passages:[]}],institutions:[{id:'inst',name:'Directory',responsibility:'Identify the correct official',sourceIds:['src-test'],status:'needs-review'}],claims:[],options:[{id:'opt',title:'Public comment',evidence:'Check agenda first',effort:'Unknown',limitations:'No process verified',dependencies:['src-test'],status:'needs-review'}],actions:[{id:'act',title:'Check agenda',date:'',basis:'Confirm availability',done:false,owner:'',dateKind:'unspecified'}],summary:'No live AI enabled.',researchQuestions:[],limitations:['Human review needed'],metadata:{model:'disabled'}};
+const current=C.create();current.correspondence='MY DRAFT';current.authorityNotes='MY NOTES';
+current.actions.push({id:'mine',title:'My completed work',date:'',basis:'',done:true,owner:'Me',dateKind:'unspecified'});
+const next=W.merge(current,patch);
+assert.equal(next.correspondence,'MY DRAFT');assert.equal(next.authorityNotes,'MY NOTES');assert.equal(next.actions[0].done,true);assert.equal(current.sources.length,0);
+assert.equal(next.sources.length,1);assert.equal(next.options.length,1);
+assert.equal(W.merge(next,patch).sources.length,1);
+assert.throws(()=>W.merge(current,{...patch,correspondence:'OVERWRITE'}));
+assert.throws(()=>W.merge(current,{...patch,sources:[{...patch.sources[0],url:'javascript:alert(1)'}]}));
+assert.throws(()=>W.merge(current,{...patch,institutions:[{...patch.institutions[0],sourceIds:['missing']}]}));
+assert.throws(()=>W.merge(current,{...patch,actions:[{...patch.actions[0],date:'2026-11-40'}]}));
+assert.throws(()=>W.merge(current,{...patch,options:[{...patch.options[0],status:'VERIFIED'}]}));
+const own=C.create();own.sources=[{...patch.sources[0],id:'mine',notes:'MY EDITS'}];
+const merged=W.merge(own,patch);assert.equal(merged.sources[0].notes,'MY EDITS');assert.equal(merged.institutions[0].sourceIds[0],'mine');
+console.log('Workspace mapping, preservation, references, malformed responses: PASS');

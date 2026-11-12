@@ -20,3 +20,6 @@ tests/view-tests.json
 # Advocacy case files and user exports: never version personal data
 private-data/
 case-exports/
+.venv/
+.pytest_cache/
+frontend/dist/

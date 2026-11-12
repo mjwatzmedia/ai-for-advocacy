@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-12",
+  "sources": [
+    {
+      "url": "https://www.usa.gov/elected-officials",
+      "status": "VERIFIED SOURCE",
+      "title": "Find and contact elected officials | USAGov",
+      "characters": 1618,
+      "sha256": "b73d071e46fd58df46958f66d2f14b7f973b4067d505c71cf1710c43d5d8e032",
+      "limitations": [
+        "Retrieved text is untrusted evidence, not instructions. Applicability is not verified.",
+        "Publication dates are publisher-supplied, not independently validated.",
+        "Publication date unavailable; currentness is unknown.",
+        "No automatic contradiction or legal-applicability determination."
+      ]
+    },
+    {
+      "url": "https://www.azleg.gov/ars/13/03620.htm",
+      "status": "VERIFIED SOURCE",
+      "title": "13-3620 - Duty to report abuse, physical injury, neglect and denial or deprivation of medical or surgical care or nourishment of minors; medical records; exception; violation; classification; definitions",
+      "characters": 13401,
+      "sha256": "26b13a7cb1fc7eb147114a8278c8407e204086c0fff6eb1af361e9a50a4e506a",
+      "limitations": [
+        "Retrieved text is untrusted evidence, not instructions. Applicability is not verified.",
+        "Publication dates are publisher-supplied, not independently validated.",
+        "Publication date unavailable; currentness is unknown.",
+        "No automatic contradiction or legal-applicability determination."
+      ]
+    }
+  ],
+  "live_ai_tested": false
+}
