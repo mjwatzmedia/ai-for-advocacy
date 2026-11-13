@@ -1,6 +1,9 @@
 # Research-workspace foundation — checkpoint, November 12, 2026
 
-**Development branch only. Not a finished product, merge, deployment or public AI service.**
+**Historical pre-merge checkpoint.** PR #5 was subsequently merged by MJ Watz on
+November 12, 2026 (America/Los_Angeles); this foundation is included in `main`.
+The results below describe the checkpoint tests, not a new production launch.
+See [TEAM-START-HERE.md](../../TEAM-START-HERE.md) for the current entry point.
 
 This increment retains the existing interface instead of rebuilding it. The research
 API returns typed source, institution, claim, option and action fields. A deterministic

@@ -2,15 +2,17 @@
 
 ## Start here
 
-The new foundation is on **`feat/fullstack-research-engine-20261112`**, in
-[draft PR #5](https://github.com/mjwatzmedia/ai-for-advocacy/pull/5), not on `main`.
-Main still holds the earlier standalone planner. No merge or public deployment is implied.
+The research foundation is included in **`main`** after MJ Watz merged
+[PR #5](https://github.com/mjwatzmedia/ai-for-advocacy/pull/5) on November 12, 2026
+(America/Los_Angeles). Start new work from `main`, not the historical checkpoint branch.
+[TEAM-START-HERE.md](../../TEAM-START-HERE.md) covers setup and contribution steps.
+A merged prototype is not a public production deployment.
 
 Install Git, Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 Node 22.12+ and Chromium are only needed for browser development/tests.
 
 ```sh
-git clone --branch feat/fullstack-research-engine-20261112 \
+git clone --branch main \
   https://github.com/mjwatzmedia/ai-for-advocacy.git
 cd ai-for-advocacy/backend
 uv sync --locked
@@ -38,7 +40,7 @@ replace existing notes or drafts. Use synthetic cases only.
 
 ## What works and what does not
 
-| Capability | Development-branch status |
+| Capability | Foundation status |
 |---|---|
 | Intake, editable workspace, Word/Markdown/JSON export and JSON restore | Implemented |
 | Curated/selected public HTTPS page retrieval | Implemented, bounded; network can fail |

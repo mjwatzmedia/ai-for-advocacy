@@ -4,8 +4,8 @@ Thanks for your interest in building accessible, evidence-grounded civic technol
 
 ## Current stage
 This is a public experimental planning and bounded-retrieval foundation.
-The new research runtime is on `feat/fullstack-research-engine-20261112` in draft PR #5,
-not merged into `main`. Live AI is off; applicable-law/decision-maker explanations and
+The research runtime was merged into `main` through PR #5 on November 12, 2026.
+Start with [TEAM-START-HERE.md](TEAM-START-HERE.md) for setup and branch/fork instructions. Live AI is off; applicable-law/decision-maker explanations and
 conversational clarification remain incomplete. Nothing is submitted or sent.
 See [developer handoff](docs/fullstack/DEVELOPER-HANDOFF.md) for accurate status and setup.
 A final license has not been approved.

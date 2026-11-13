@@ -2,27 +2,44 @@
 
 **Repository status:** Public, as authorized by MJ Watz on November 12, 2026. Public visibility does not select a license or authorize deployment. Contributor onboarding documents are in [CONTRIBUTING.md](CONTRIBUTING.md), [GOVERNANCE.md](GOVERNANCE.md), [SECURITY.md](SECURITY.md), and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). No final open-source license has been approved; see [LICENSE-STATUS.md](LICENSE-STATUS.md).
 
-## Development checkpoint — structured research foundation
+## 🚧 ACTIVE DEVELOPMENT — NEW TEAM MEMBERS START HERE
 
-This development branch adds a FastAPI research backend and a validated adapter
-for the **existing interface**. See [checkpoint, run instructions, tests and limits](docs/fullstack/CHECKPOINT.md).
-Live source retrieval is implemented for bounded curated/selected pages; live AI
-generation remains disabled and untested. This is not a completed conversational
-product or a deployed service. The legacy descriptions below describe the original
-standalone `server.py` planner; use the FastAPI instructions for new research controls.
+**The research foundation is now included in `main`.**
+MJ Watz merged [PR #5](https://github.com/mjwatzmedia/ai-for-advocacy/pull/5)
+on November 12, 2026 (America/Los_Angeles). No branch switch is needed for the latest
+merged foundation. The old `feat/fullstack-research-engine-20261112` branch preserves
+the earlier checkpoint; create new task branches from `main`.
 
-## Current development status
+### [→ TEAM-START-HERE.md — setup, first tasks and how to contribute](TEAM-START-HERE.md)
 
-**Developers: start with [DEVELOPER-HANDOFF.md](docs/fullstack/DEVELOPER-HANDOFF.md).**
-It includes the exact branch, clone/run/test commands, module map and remaining work.
-The research foundation is in **draft PR #5**, not merged into `main`.
+| Where to go | What you will find |
+|---|---|
+| [TEAM-START-HERE.md](TEAM-START-HERE.md) | Beginner-friendly setup and branch/fork/pull-request steps |
+| [Developer handoff](docs/fullstack/DEVELOPER-HANDOFF.md) | Module map, tests, working features and unfinished capabilities |
+| [`backend/advocacy/`](backend/advocacy/) | Research API, retrieval, contracts and optional AI adapters |
+| [`public/`](public/) | Existing interface, case model and structured-field integration |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Review rules, evidence standards and licensing boundaries |
 
-The original planner's editable workspace and Word/Markdown/JSON save-and-restore
-remain. Bounded public-page retrieval and review-before-apply structured results
-are implemented. Live AI is disabled and has not been acceptance-tested.
+**Run the research foundation:**
+
+```sh
+git clone --branch main https://github.com/mjwatzmedia/ai-for-advocacy.git
+cd ai-for-advocacy/backend
+uv sync --locked
+uv run uvicorn advocacy.api:app --host 127.0.0.1 --port 8080 --no-access-log
+```
+
+Requires Git, Python 3.11+ and [uv](https://docs.astral.sh/uv/).
+Open **http://127.0.0.1:8080**. No AWS, PromptQL or model key is needed for baseline use.
+
+**Development prototype, not a finished AI service:** bounded source retrieval and
+review-before-apply structured results work. Live AI is disabled and untested.
 Specific decision-maker identification, applicable-law analysis, beginner-friendly
-authority explanations and open-ended clarification chat remain incomplete.
-Campaign drafts are templates, not verified recommendations.
+authority explanations and clarification chat remain incomplete. Campaign drafts
+are templates, not verified recommendations. Merging code does not deploy a service.
+
+See the [dated checkpoint evidence](docs/fullstack/CHECKPOINT.md).
+The sections below describe the preserved older standalone planner.
 
 ## Existing planner features (preserved)
 
