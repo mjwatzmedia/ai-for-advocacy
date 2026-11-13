@@ -17,4 +17,4 @@ Accuracy and source traceability; privacy and safeguarding; accessibility; minim
 The software should support lawful participation across viewpoints without choosing a political position for a user. Users control their goals, edits, exports, and external actions. The product must not present allegations as verified facts or invented procedures as official guidance.
 
 ## Open-source transition
-The repository is currently private and its final license, contribution certification process, trademark policy, and public-release timing remain undecided. This is an interim governance document, not an open-source license or promise of public release. Future governance changes should be reviewed openly with collaborators when appropriate.
+The repository is public as authorized by MJ Watz on November 12, 2026. Its final license, contribution certification process and trademark policy remain undecided. This is an interim governance document, not an open-source license or promise of public release. Future governance changes should be reviewed openly with collaborators when appropriate.

@@ -1,7 +1,7 @@
 # License decision pending
 
 MJ Watz has not selected or approved a final license for the official project.
-The repository is currently private and invitation-only. A future public release or open-source license requires a separate maintainer decision. Do not represent a final open-source license as selected.
+MJ Watz authorized public repository visibility on November 12, 2026. A final open-source license still requires a separate maintainer decision. Do not represent a final open-source license as selected.
 
 The original npm initialization left `license: ISC` in `package.json` and the
 root entry of `package-lock.json`. Those bytes are preserved in this baseline
